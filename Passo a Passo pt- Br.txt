@@ -1,0 +1,202 @@
+
+-----------------------------------------------------------
+
+Olá a todos! 
+Sejam bem vindos ao passo a passo de "Como usar o Git!"
+
+
+>> Você primeiro precisa do Git instalado no seu computador (Obvio, né?)
+Então tá aqui uma pequena ajuda: Link =
+
+--- Okay Vicky, eu baixei o Git. Qual próximo passo?
+
+>> Simples. Na sua Área de Trabalho, crie uma nova pasta e renomeie da maneira que quiser, por exemplo "Projeto"
+>> Agora abra a pasta "Projeto", clique com o botão direito, procure por "Git bash here" e selecione 
+
+
+--- PELOS DEUSES! Não aconteceu nada!!! AJUDA POR FAVOR!!!!
+
+
+	Calma, não priemos cânico. Seu computador não permite ver pastas ou objetos escondidos, por enquanto, então vamos consertar!!
+		Ainda dentro da pasta, vá no canto superior da tela e procure por Exibir, depois por mostrar/ocultar e por fim selecione itens ocultos. 
+		Agora você vai conseguir ver uma pasta chamada ".git" (Se não conseguir, mesmo depois de seguir as instruções, apague a pasta e repita o processo)
+
+
+>> Uau, temos uma pasta com um arquivo ".git" e o programa Git aberto. Hora de começar a criar nosso projeto
+
+1. Clique com o botão direito, vá em novo, e crie um documento de texto (você pode usar o programa de codificação que você gosta, também. Eu prefiro o bloco de notas do computador ^^)
+2. Customize o nome do documento e abra-o
+3. Escreva o que você preferir. Pode ser código, script, texto, notas/informações, enfim.
+
+NÃO ESQUEÇA DE SALVAR! (famoso ctrl + s)
+
+	
+	
+	Vamos para o GIT!
+
+Bem, para acrescentar itens ao nosso código precisamos obter um relatório dele:
+
+>>> então usamos o comando $ git status ( o "$" já vem no git entt é só acrescentar "git status");
+
+O git vai rodar uma série de mensagens que vai se parecer mais como isso: 
+
+}
+
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Example.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+{
+
+
+--- Caraca! O que isso significa???
+
+
+Basicamente:
+
+- "On branch master": O divisor onde está nossa pasta, e consequentemente nosso código
+
+- "No commits yet": Versões do código, que inicialmente não temos
+
+- "Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Example.txt" : Que existe algum arquivo que não consta dentro do nosso controle de versão.
+
+
+>>> Vamos adicionar o arquivo em nosso Git, utilizando o comando "$ git add "nome do arquivo.txt" ", no nosso caso seria "$ git add "Example.txt"" e ENTER
+
+
+Prontinho. Vamos verificar se o arquivo foi mesmo?? Usaremos o comando $ git status e vai aparecer:
+
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Example.txt
+
+
+
+--- Certo.... Mas eu quero adicionar mais coisas, preciso adicionar um por um assim??
+
+
+NOP NOP NOP!! Comando básico pra adicionar os arquivos que estão faltando, tudo de uma vez: $ git add .
+
+Exemplo depois de usar o comando:
+
+  On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Example.txt
+        new file:   Lolita Creator (4).png
+        new file:   "Made a Mona pc wallpaper edit, feel free to use it! \360\237\222\226.jpg"
+
+
+>>> Criando a primeira versão, vamos usar o comando "$ git commit -m "commit inicial" " 
+Se você naõ estiver conectado com o GitHub, digite $ git config --global user.email "emailusadonocadastrodogithub@email.com"
+					depois $ git config --global user.name "Seu nome"
+
+
+Agora é só repetir o comando $ git commit -m "commit inicial"
+Vamos ter isso:
+
+[master (root-commit) 6f25bc4] commit inicial
+ 3 files changed, 1 insertion(+)
+ create mode 100644 Example.txt
+ create mode 100644 Lolita Creator (4).png
+ create mode 100644 "Made a Mona pc wallpaper edit, feel free to use it! \360\237\222\226.jpg"
+
+
+Significa que criamos nossa versão inicial e temos os arquivos que adicionamos. 
+
+>>> Agora vamos enviar TUDO ISSO, para o GitHub:
+
+1. Vá no GitHub e crie um repositório
+2. Copie o link da aba do browser seu que vai estar nesse formato aqui "https://github.com/vickydscp/Tutorial"
+3. Vá para o GIT e escreva o seguinte comando $ git remote add origin " o lik do teu repositório"
+Exemplo: $ git remote add origin "https://github.com/vickydscp/Tutorial"
+
+4. Digite o comando $ git push e depois o comando $  git push --set-upstream origin master
+
+
+Espera um pouquinho, porque o GIT vai abrir os componentes no teu repositório.
+Então teremos isso:
+
+{
+
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 408.42 KiB | 15.13 MiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/vickydscp/Tutorial/pull/new/master
+remote:
+To https://github.com/vickydscp/Tutorial
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+ }
+
+PERFEITO!
+
+Vamos para o GitHUB, no repositório que criamos e procurar a aba "main". Selecione "master" e IRRA, seus documentos estarão lá!
+
+------ PRÓXIMO PASSO --------
+       Atualizações
+
+OK! lEMBRAM do documento de texto? Então, façam uma alteração, qualquer uma!Não esqueçam de salvar.
+
+Lembram do comando pra obter relatórios? Não? O comando é $ git status
+ 
+Se tudo der certo, veremos:
+
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Example.txt
+
+
+" modified:   Example.txt "(vai aparecer o nome do seu arquivo) ou seja nosso arquivo de texto foi modificado
+
+
+--- OKAY? e AGORA?
+
+Vamo repetir o processo.
+
+>> $ git add . (para adicionar o arquivo)
+>> $ git status (para veificar se deu tudo certo )
+
+Vamos criar uma nova versão:
+
+>>> use o comando $ git commit -m "o que você mudou nessa versão" e ENTER
+>>> mandar para o github, usando $ git push
+
+
+--------- Coisas EXTRAS ----------
+
+Comando para ver Histórico: 
+
+>>> $ git reflog
+
+Navegar entre versões
+
+>>> Digite o comando $ git reflog
+>>> Depois $ git reset --hard id da versão que você quer voltar
+
+Para voltar para a versão atual é só digitar $ git reset --hard id da versão atual
